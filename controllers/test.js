@@ -31,4 +31,4 @@ const update = async (req, res) => {
     res.status(200).json({ success: true })
 }
 
-export default { index, get, update, add, replace, m123 }
+export default { index, get, update, add, replace }
