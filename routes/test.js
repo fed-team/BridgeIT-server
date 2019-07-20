@@ -8,6 +8,9 @@ router.route('/')
     .get(Controller.index)
     .post(validateBody(schema.test.post), Controller.add)
 
+router.route('/nowtest')
+    .get(Controller.index)
+
 router.route('/:id')
     .get(validateParam(schema.id, 'id'), Controller.get)
     .put([validateParam(schema.id, 'id'), validateBody(schema.test.put)], Controller.replace)
