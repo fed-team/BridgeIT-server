@@ -1,2 +1,2 @@
-export { default as roleRoute } from "./role";
-export { default as testRoute } from "./test";
+export { default as role } from "./role";
+export { default as test } from "./test";

@@ -1,9 +1,5 @@
 import { Schema, model } from 'mongoose'
 
-const util = require('util')
-
-
-
 const TestSchema = new Schema({
     name: { type: String, required: true, unique: true },
 })

@@ -1,15 +1,17 @@
 import express from 'express'
 
 import config from './config'
-import { roleRoute, testRoute } from './routes'
+import { role, test } from './routes'
+
+require('dotenv').config()
 
 const app = express()
 
 config.useMiddleware(app)
 config.mongo_connect()
 
-app.use('/test', testRoute);
-app.use('/role', roleRoute);
+app.use('/test', test);
+app.use('/role', role);
 
 const port = process.env.PORT || 1200
 app.listen(port, err => {

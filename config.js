@@ -12,9 +12,8 @@ const setHeaders = res => {
 }
 
 const mongo_connect = () => {
-    const MONGO_URL = 'mongodb+srv://Maciek:Antek@gabriel-jtivb.mongodb.net/test?retryWrites=true';
     mongoose.set('useCreateIndex', true);
-    mongoose.connect(MONGO_URL, { useNewUrlParser: true })
+    mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true })
 }
 
 const useMiddleware = app => {

@@ -1,8 +1,8 @@
 import { Role } from '../models'
 
 const index = async (req, res) => {
-    const tests = await Role.find({});
-    res.status(200).json(tests);
+    const roles = await Role.find({});
+    res.status(200).json(roles);
 };
 
 const add = async (req, res) => {
