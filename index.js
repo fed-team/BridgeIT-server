@@ -1,14 +1,15 @@
 import express from 'express'
 
 import config from './config'
-import routeTest from './routes/test'
+import { roleRoute, testRoute } from './routes'
 
 const app = express()
 
 config.useMiddleware(app)
 config.mongo_connect()
 
-app.use('/test', routeTest)
+app.use('/test', testRoute);
+app.use('/role', roleRoute);
 
 const port = process.env.PORT || 1200
 app.listen(port, err => {

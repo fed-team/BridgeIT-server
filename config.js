@@ -12,7 +12,7 @@ const setHeaders = res => {
 }
 
 const mongo_connect = () => {
-    const MONGO_URL = 'mongodb://admin:admin123@ds231537.mlab.com:31537/bridgeit';
+    const MONGO_URL = 'mongodb+srv://Maciek:Antek@gabriel-jtivb.mongodb.net/test?retryWrites=true';
     mongoose.set('useCreateIndex', true);
     mongoose.connect(MONGO_URL, { useNewUrlParser: true })
 }
