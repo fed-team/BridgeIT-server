@@ -33,8 +33,9 @@ const update = async (req, res) => {
 
 const switchActivity = async (req, res) => {
     const { id } = req.value.params;
-    const isActive = req.params[0] === "";
-    await Role.findByIdAndUpdate(id, {isActive});
+    const { desiredAction } = req.params;
+
+    await Role.findByIdAndUpdate(id, {isActive: desiredAction === "activate"});
     res.status(200).json( {success: true} );
 };
 

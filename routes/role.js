@@ -5,12 +5,11 @@ import { validateParam, validateBody, schema } from '../helpers/routeHelpers';
 
 const router = expressPromiseRouter();
 
-
 router.route('/')
     .get(Controller.index)
     .post(validateBody(schema.role.post), Controller.add);
 
-router.route('/*activate/:id')
+router.route('/:desiredAction((((de)?)activate))/:id')
     .patch( validateParam(schema.id, 'id'), Controller.switchActivity);
 
 router.route('/:id')
