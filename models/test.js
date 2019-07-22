@@ -1,11 +1,13 @@
-import { Schema, model, models } from 'mongoose'
+import { Schema, model } from 'mongoose'
 
 const TestSchema = new Schema({
     name: { type: String, required: true, unique: true },
 })
 
 TestSchema.pre("save", true, function(next, done) {
-    models.Test.findOne({name: this.name}, (err, test) => {
+
+
+    this.constructor.findOne({name: this.name}, (err, test) => {
         if(err) 
             done(err);
         if(test) 

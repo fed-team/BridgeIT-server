@@ -40,7 +40,21 @@ export const schema = {
             name: Joi.string()
         })
     },
+    role: {
+        post: Joi.object().keys({
+            name: Joi.string().required(),
+            color: Joi.string().required().regex(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
+        }),
+        put: Joi.object().keys({
+            name: Joi.string().required(),
+            color: Joi.string().required().regex(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
+        }),
+        patch: Joi.object().keys({
+            name: Joi.string(),
+            color: Joi.string().regex(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
+        })
+    },
     id: Joi.object().keys({
         param: Joi.string().regex(/^[0-9a-fA-Z]{24}$/).required()
     })
-}
+};
