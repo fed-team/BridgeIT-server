@@ -84,6 +84,7 @@ The above instructs Now with:
 - The [`routes` property](https://zeit.co/docs/v2/deployments/configuration#routes), instructing Now to route the user to the `www/index.html` file when requesting the root path.
 
 
+
 For more information on configuring Now, see the [Configuration documentation](https://zeit.co/docs/v2/deployments/configuration).
 
 ## Resources
