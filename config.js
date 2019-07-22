@@ -13,7 +13,7 @@ const setHeaders = res => {
 
 const mongo_connect = () => {
     mongoose.set('useCreateIndex', true);
-    mongoose.connect(process.env.VARIABLE_NAME, { useNewUrlParser: true })
+    mongoose.connect(process.env.MY_KEY, { useNewUrlParser: true })
 }
 
 const useMiddleware = app => {
