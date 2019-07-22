@@ -83,6 +83,7 @@ The above instructs Now with:
 - The [`builds` property](https://zeit.co/docs/v2/deployments/configuration#builds), allowing Now to use [the @now/node Builder](https://zeit.co/docs/v2/deployments/official-builders/node-js-now-node/) with a specific source target.
 - The [`routes` property](https://zeit.co/docs/v2/deployments/configuration#routes), instructing Now to route the user to the `www/index.html` file when requesting the root path.
 
+
 For more information on configuring Now, see the [Configuration documentation](https://zeit.co/docs/v2/deployments/configuration).
 
 ## Resources
