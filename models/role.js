@@ -3,7 +3,7 @@ import { ensureFieldUniquity } from "./utils";
 
 const RoleSchema = new Schema({
     name: { type: String, required: true, unique: true },
-    color: { type: Number, required: true },
+    color: { type: String, required: true },
     isActive: { type: Boolean, default: false }
 });
 
