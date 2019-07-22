@@ -8,6 +8,6 @@
     { "src": "/(.*)", "dest": "index.js" }
   ],
   "env": {
-    "MONGO_URL": "@mongo_url"
+    "VARIABLE_NAME": "@secret-name"
   }
 }
