@@ -64,6 +64,7 @@ For more information on deploying, see the [Deployment Basics documentation](htt
 
 This example contains a `now.json` file which instructs Now how to treat this project when developing locally and deploying.
 
+
 ```json
 {
   "version": 2,
