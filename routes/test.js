@@ -1,7 +1,11 @@
 import expressPromiseRouter from 'express-promise-router'
 
 import Controller from '../controllers/test'
-import { validateParam, validateBody, schema } from '../helpers/routeHelpers'
+import {
+    validateParam,
+    validateBody,
+    schema
+} from 'helpers/routeHelpers'
 
 const router = expressPromiseRouter();
 

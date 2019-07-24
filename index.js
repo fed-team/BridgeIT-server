@@ -1,7 +1,14 @@
 import express from 'express'
+import {
+    addPath
+} from 'app-module-path';
+addPath(__dirname);
 
 import config from './config'
-import { role, test } from './routes'
+import {
+    role,
+    test
+} from './routes'
 
 require('dotenv').config()
 
@@ -15,6 +22,6 @@ app.use('/role', role);
 
 const port = process.env.PORT || 1200
 app.listen(port, err => {
-    if(err) throw err
+    if (err) throw err
     console.log(`> Ready on server http://localhost:${port}`)
 })
