@@ -43,11 +43,11 @@ export const schema = {
     role: {
         post: Joi.object().keys({
             name: Joi.string().required(),
-            color: Joi.string().required().regex(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
+            color: Joi.string().required().regex(/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
         }),
         put: Joi.object().keys({
             name: Joi.string().required(),
-            color: Joi.string().required().regex(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
+            color: Joi.string().required().regex(/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
         }),
         patch: Joi.object().keys({
             name: Joi.string(),
