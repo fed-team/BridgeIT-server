@@ -6,12 +6,10 @@ export default async transporter => {
     if(!transporter)
         return;
 
-    const inactiveRoles = await Role.find({newlyAdded: true});
+    const inactiveRoles = await Role.find({ createdAt: { $gt: new Date(Date.now() - 60 * 60 * 1000) }});
 
     if(inactiveRoles.length === 0)
         return;
-
-    await Role.updateMany({}, {$unset: {newlyAdded: true}});
 
     const text = roleNotifierMail(inactiveRoles);
     const from = process.env.MAIL_EMAIL, to = process.env.NOTIFICATIONS_TARGET_MAIL, subject="New roles";
