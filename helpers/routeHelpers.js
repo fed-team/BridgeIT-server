@@ -51,7 +51,7 @@ export const schema = {
         }),
         patch: Joi.object().keys({
             name: Joi.string(),
-            color: Joi.string().regex(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
+            color: Joi.string().regex(/^([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
         })
     },
     id: Joi.object().keys({
