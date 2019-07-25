@@ -64,6 +64,7 @@ For more information on deploying, see the [Deployment Basics documentation](htt
 
 This example contains a `now.json` file which instructs Now how to treat this project when developing locally and deploying.
 
+
 ```json
 {
   "version": 2,
@@ -82,6 +83,8 @@ The above instructs Now with:
 - The [`name` property](https://zeit.co/docs/v2/deployments/configuration#name), setting the name for the deployment.
 - The [`builds` property](https://zeit.co/docs/v2/deployments/configuration#builds), allowing Now to use [the @now/node Builder](https://zeit.co/docs/v2/deployments/official-builders/node-js-now-node/) with a specific source target.
 - The [`routes` property](https://zeit.co/docs/v2/deployments/configuration#routes), instructing Now to route the user to the `www/index.html` file when requesting the root path.
+
+
 
 For more information on configuring Now, see the [Configuration documentation](https://zeit.co/docs/v2/deployments/configuration).
 
