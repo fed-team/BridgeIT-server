@@ -8,6 +8,7 @@
     { "src": "/(.*)", "dest": "index.js" }
   ],
   "env": {
-    "MY_KEY": "this is the value"
+    "mongo_url": "@mongo_url"
   }
 }
+
