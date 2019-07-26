@@ -6,7 +6,12 @@ export default async transporter => {
     if(!transporter)
         return;
 
-    const inactiveRoles = await Role.find({ createdAt: { $gt: new Date(Date.now() - 60 * 60 * 1000) }});
+    const inactiveRoles = await Role.find({
+        $and: [
+            {createdAt: {$gt: new Date(Date.now() - 60 * 60 * 1000)}},
+            {isActive: false}
+        ]
+    });
 
     if(inactiveRoles.length === 0)
         return;
