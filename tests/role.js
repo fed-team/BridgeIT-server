@@ -33,16 +33,23 @@ describe('Roles', function() {
             const role = {
                 name: "sample text",
                 color: "#333"
-            }
+            };
             chai.request(server)
                 .post('/book')
-                .send(book)
+                .send(role)
                 .end((err, res) => {
                     res.should.have.status(200);
+
                     res.body.should.be.a('object');
-                    res.body.should.have.property('errors');
-                    res.body.errors.should.have.property('pages');
-                    res.body.errors.pages.should.have.property('kind').eql('required');
+                    res.body.should.have.property('_id');
+                    res.body.should.have.property('name');
+                    res.body.should.have.property('color');
+                    res.body.should.have.property('isActive');
+
+                    res.body["isActive"].should.equal(false);
+                    res.body["name"].should.equal(role.name);
+                    res.body["color"].should.equal(role.color);
+
                     done();
                 });
         });
