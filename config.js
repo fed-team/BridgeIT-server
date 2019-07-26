@@ -22,6 +22,7 @@ const mongo_connect = () => {
     mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
 };
 
+
 const useMiddleware = app => {
     app.use(cors());
     app.use(helmet());
