@@ -1,7 +1,7 @@
 import { Role } from "../models";
 import { roleNotifierMail } from "./templates";
 
-export default async transporter => {
+export default async (transporter, ADMIN_EMAILS) => {
 
     if(!transporter)
         return;
@@ -17,7 +17,7 @@ export default async transporter => {
         return;
 
     const text = roleNotifierMail(inactiveRoles);
-    const from = process.env.MAIL_EMAIL, to = process.env.NOTIFICATIONS_TARGET_MAIL, subject="New roles";
+    const from = process.env.MAIL_EMAIL, to = ADMIN_EMAILS.join(" "), subject="New roles";
 
     transporter.sendMail({from, to, subject, text})
         .then(console.log("Sent new pending roles notifications"))

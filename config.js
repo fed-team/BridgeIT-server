@@ -8,7 +8,10 @@ import nodemailer from "nodemailer"
 
 let transporter; //nodemailer
 const NOTIFICATION_INTERVAL = 1; // duration of the interval between notifications in hours
-
+const ADMIN_EMAILS = [
+    "email@ejemplo.es",
+    "email@example.com"
+];
 
 import { roleNotifier } from "./jobs";
 
@@ -50,7 +53,7 @@ const initNodeMailer = () => {
 };
 
 const kickstartScheduler = () => {
-    const rolesNotifierJob = schedule.scheduleJob(`0 */${NOTIFICATION_INTERVAL} * * *`, () => roleNotifier(transporter));
+    const rolesNotifierJob = schedule.scheduleJob(`0 */${NOTIFICATION_INTERVAL} * * *`, () => roleNotifier(transporter, ADMIN_EMAILS));
 };
 
 export default { setHeaders, mongo_connect, useMiddleware, kickstartScheduler, initNodeMailer }
