@@ -8,7 +8,7 @@
     { "src": "/(.*)", "dest": "index.js" }
   ],
   "env": {
-    "mongo_url": "@mongo_url"
+    "MONGO_URL": "@mongo_url"
   }
 }
 

@@ -20,5 +20,4 @@ let server = app.listen(port, err => {
     console.log(`> Ready on server http://localhost:${port}`);
 
 });
-
-module.exports = server;
+export default server;
