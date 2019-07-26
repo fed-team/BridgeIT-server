@@ -3,7 +3,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import bodyParser from 'body-parser'
-import schedule from "node-schedule"
+import schedule from "node-cron"
 import nodemailer from "nodemailer"
 
 let transporter; //nodemailer
@@ -53,7 +53,7 @@ const initNodeMailer = () => {
 };
 
 const kickstartScheduler = () => {
-    const rolesNotifierJob = schedule.scheduleJob(`0 */${NOTIFICATION_INTERVAL} * * *`, () => roleNotifier(transporter, ADMIN_EMAILS));
+    const rolesNotifierJob = schedule.schedule(`0 */${NOTIFICATION_INTERVAL} * * *`, () => roleNotifier(transporter, ADMIN_EMAILS));
 };
 
 export default { setHeaders, mongo_connect, useMiddleware, kickstartScheduler, initNodeMailer }
