@@ -7,6 +7,8 @@ import schedule from "node-schedule"
 import nodemailer from "nodemailer"
 
 let transporter; //nodemailer
+const NOTIFICATION_INTERVAL = 1; // duration of the interval between notifications in hours
+
 
 import { roleNotifier } from "./jobs";
 
@@ -48,7 +50,7 @@ const initNodeMailer = () => {
 };
 
 const kickstartScheduler = () => {
-    const rolesNotifierJob = schedule.scheduleJob('0 * * * *', () => roleNotifier(transporter));
+    const rolesNotifierJob = schedule.scheduleJob(`0 */${NOTIFICATION_INTERVAL} * * *`, () => roleNotifier(transporter));
 };
 
 export default { setHeaders, mongo_connect, useMiddleware, kickstartScheduler, initNodeMailer }
