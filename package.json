@@ -14,7 +14,7 @@
   "scripts": {
     "start": "babel-node .",
     "dev": "now dev",
-    "test": "mocha --require babel-core/register ./tests"
+    "test": "mocha --require babel-core/register ./tests/**/*.js --exit"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
