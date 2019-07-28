@@ -1,7 +1,11 @@
 import express from 'express'
 
 import config from './config'
-import { role, test } from './routes'
+import {
+    role,
+    test,
+    user
+} from './routes'
 
 require('dotenv').config()
 
@@ -12,12 +16,13 @@ config.mongo_connect()
 
 app.use('/test', test);
 app.use('/role', role);
+app.use('/user', user);
 
 const port = process.env.PORT || 1200;
 
 
-const server = app.listen(port, function(err)  {
-    if(err) throw err;
+const server = app.listen(port, function (err) {
+    if (err) throw err;
     console.log(`> Ready on server http://localhost:${port}`);
 
 });
