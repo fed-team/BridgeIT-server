@@ -63,17 +63,17 @@ export const schema = {
         post: Joi.object().keys({
             login: Joi.string().required(),
             password: Joi.string().required().regex(/^[a-zA-Z0-9]{8}$/),
-            role: Joi.array().has(schema.role).required()
+            role: Joi.array().required()
         }),
         put: Joi.object().keys({
             login: Joi.string().required(),
             password: Joi.string().required().regex(/^[a-zA-Z0-9]{8}$/),
-            role: Joi.array().has(schema.role).required()
+            role: Joi.array().required()
         }),
         patch: Joi.object().keys({
             login: Joi.string().required(),
             password: Joi.string().required().regex(/^[a-zA-Z0-9]{8}$/),
-            role: Joi.array().has(schema.role).required()
+            role: Joi.array().required()
         })
     }
 };
