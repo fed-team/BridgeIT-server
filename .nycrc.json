@@ -1,0 +1,6 @@
+{
+    "check-coverage": true,
+    "lines": 75,
+    "include": ["**/*.js"],
+    "exclude": ["tests/**/*.js"]
+}

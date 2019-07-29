@@ -9,12 +9,13 @@
     "helmet": "^3.15.0",
     "joi": "^14.3.0",
     "mongoose": "^5.4.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "nyc": "^14.1.1"
   },
   "scripts": {
     "start": "babel-node .",
     "dev": "now dev",
-    "test": "mocha --require babel-core/register ./tests/**/*.js --exit"
+    "test": "nyc mocha tests/**/*.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
