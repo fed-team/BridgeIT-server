@@ -1,20 +1,11 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model } from 'mongoose';
+import { ensureFieldUniquity } from "./utils";
 
 const TestSchema = new Schema({
-    name: { type: String, required: true, unique: true },
-})
-
-TestSchema.pre("save", true, function(next, done) {
-
-
-    this.constructor.findOne({name: this.name}, (err, test) => {
-        if(err) 
-            done(err);
-        if(test) 
-            done("this name has taken");
-        done();
-    });
-    next();
+    name: { type: String },
+    uniqueValuesField: { type: String, required: true, unique: true }
 });
+
+TestSchema.pre("save", true, ensureFieldUniquity("uniqueValuesField"));
 
 export default model('Test', TestSchema)

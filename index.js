@@ -15,9 +15,13 @@ config.kickstartScheduler();
 app.use('/test', test);
 app.use('/role', role);
 
-
 const port = process.env.PORT || 1200;
-app.listen(port, err => {
+
+
+const server = app.listen(port, function(err)  {
     if(err) throw err;
-    console.log(`> Ready on server http://localhost:${port}`)
+    console.log(`> Ready on server http://localhost:${port}`);
+
 });
+
+export default server;

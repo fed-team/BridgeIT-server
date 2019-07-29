@@ -12,15 +12,21 @@
     "morgan": "^1.9.1",
     "node-cron": "^2.0.3",
     "nodemailer": "^6.3.0"
+    "nyc": "^14.1.1"
   },
   "scripts": {
     "start": "babel-node .",
-    "dev": "now dev"
+    "dev": "now dev",
+    "test": "nyc mocha tests/**/*.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.26.0"
+    "babel-register": "^6.26.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.0"
   }
 }
