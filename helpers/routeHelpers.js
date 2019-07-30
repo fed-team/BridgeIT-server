@@ -1,4 +1,4 @@
-import Joi from 'joi'
+import Joi from 'joi';
 
 export const validateParam = (schema, name) => {
     return (req, res, next) => {
@@ -62,18 +62,18 @@ export const schema = {
     user: {
         post: Joi.object().keys({
             login: Joi.string().required(),
-            password: Joi.string().required().regex(/^[a-zA-Z0-9]{8}$/),
+            password: Joi.string().required().regex(/^[a-zA-Z0-9]$/),
             role: Joi.array().required()
         }),
         put: Joi.object().keys({
             login: Joi.string().required(),
-            password: Joi.string().required().regex(/^[a-zA-Z0-9]{8}$/),
+            password: Joi.string().required().regex(/^[a-zA-Z0-9]$/),
             role: Joi.array().required()
         }),
         patch: Joi.object().keys({
-            login: Joi.string().required(),
-            password: Joi.string().required().regex(/^[a-zA-Z0-9]{8}$/),
-            role: Joi.array().required()
+            login: Joi.string(),
+            password: Joi.string().regex(/^[a-zA-Z0-9]$/),
+            role: Joi.array()
         })
     }
 };

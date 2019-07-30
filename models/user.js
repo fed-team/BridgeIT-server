@@ -7,6 +7,7 @@ import {
 } from "./utils";
 
 import bcrypt from 'bcrypt';
+// import Role from './role'
 
 const UserSchema = new Schema({
     login: {
@@ -28,19 +29,19 @@ const UserSchema = new Schema({
     }
 });
 
-const passwordHash = (ensureFieldUniquity) => {
+// const passwordHash = (ensureFieldUniquity) => {
 
 
-    if (this.password && this.isModified('password')) {
-        this.password = bcrypt.hash(this.password, 10, function (err, hash) {
-            if (err) console.log("Error in hashing process!", err)
-            else hash;
-        })
-    };
-    ensureFieldUniquity("login")
+//     if (this.password && this.isModified('password')) {
+//         this.password = bcrypt.hash(this.password, 10, function (err, hash) {
+//             if (err) console.log("Error in hashing process!", err)
+//             else hash;
+//         })
+//     };
+//     ensureFieldUniquity("login")
 
-}
+// }
 
-UserSchema.pre("save", true, passwordHash(ensureFieldUniquity).bind());
+UserSchema.pre("save", true, ensureFieldUniquity('login'));
 
 export default model('User', UserSchema);

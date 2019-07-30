@@ -1,10 +1,25 @@
-import { Schema, model } from 'mongoose'
-import { ensureFieldUniquity } from "./utils";
+import {
+    Schema,
+    model
+} from 'mongoose'
+import {
+    ensureFieldUniquity
+} from "./utils";
 
 const RoleSchema = new Schema({
-    name: { type: String, required: true, unique: true },
-    color: { type: String, required: true },
-    isActive: { type: Boolean, default: false }
+    name: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    color: {
+        type: String,
+        required: true
+    },
+    isActive: {
+        type: Boolean,
+        default: false
+    }
 });
 
 RoleSchema.pre("save", true, ensureFieldUniquity("name"));
