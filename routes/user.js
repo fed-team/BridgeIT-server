@@ -23,7 +23,7 @@ router.route('/:id')
     .put([validateParam(schema.id, 'id'), validateBody(schema.user.put)], Controller.replace)
     .patch([validateParam(schema.id, 'id'), validateBody(schema.user.patch)], Controller.update);
 
-router.route('/:id/delete')
+router.route('/delete/:id')
     .post(validateBody(schema.user.post), Controller.deleteUser)
 
 export default router;

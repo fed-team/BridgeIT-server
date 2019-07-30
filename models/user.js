@@ -7,7 +7,7 @@ import {
 } from "./utils";
 
 import bcrypt from 'bcrypt';
-// import Role from './role'
+// import role from './role'
 
 const UserSchema = new Schema({
     login: {
@@ -25,23 +25,31 @@ const UserSchema = new Schema({
     },
     isActive: {
         type: Boolean,
-        default: false
+        default: true
     }
 });
 
-// const passwordHash = (ensureFieldUniquity) => {
+UserSchema.pre("save", true, ensureFieldUniquity("login"))
 
 
-//     if (this.password && this.isModified('password')) {
-//         this.password = bcrypt.hash(this.password, 10, function (err, hash) {
-//             if (err) console.log("Error in hashing process!", err)
-//             else hash;
+
+// function (next) {
+//     const user = this;
+
+
+//     if (user.password && user.isModified('password')) {
+//         bcrypt.genSalt(10, function (err, salt) {
+//             if (err) console.log("Error in salt generator process!", err)
+//             bcrypt.hash(user.password, salt, function (err, hash) {
+//                 if (err) console.log("Error in hashing process!", err)
+//                 user.password = hash;
+//                 next();
+//             })
+
 //         })
-//     };
-//     ensureFieldUniquity("login")
+//     } else next();
 
-// }
+// });
 
-UserSchema.pre("save", true, ensureFieldUniquity('login'));
 
 export default model('User', UserSchema);

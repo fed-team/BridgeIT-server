@@ -61,7 +61,7 @@ const switchActivity = async (req, res) => {
 const deleteUser = async (req, res) => {
     const {
         id
-    } = req.value.params;
+    } = req.params;
 
     await User.deleteOne({
         _id: id,
