@@ -10,6 +10,8 @@
     "joi": "^14.3.0",
     "mongoose": "^5.4.0",
     "morgan": "^1.9.1",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^6.3.0",
     "nyc": "^14.1.1"
   },
   "scripts": {
