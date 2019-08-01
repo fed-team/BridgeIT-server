@@ -17,7 +17,7 @@
   "scripts": {
     "start": "babel-node .",
     "dev": "now dev",
-    "test": "nyc mocha tests/**/*.js"
+    "test": "NODE_ENV=test nyc mocha tests/**/*.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
