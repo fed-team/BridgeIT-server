@@ -1,0 +1,2 @@
+PR_TITLE_REGEX: /(BIT#)([a-z0-9]{1,}) - ([\w\s\d]{1,})/
+COMMIT_MESSAGE_REGEX: /([\w\s\d]{1,})/
