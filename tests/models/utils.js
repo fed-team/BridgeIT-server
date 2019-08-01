@@ -2,7 +2,7 @@ import { expect } from 'chai';
 
 import { Test} from "../../models";
 
-
+process.env.NODE_ENV = 'test';
 describe("Model utility functions", function() {
 
     beforeEach(async () => {

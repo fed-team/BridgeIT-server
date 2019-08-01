@@ -24,7 +24,19 @@ const setHeaders = res => {
 
 const mongo_connect = () => {
     mongoose.set('useCreateIndex', true);
-    mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true });
+    let mongo_url
+    switch(process.env.NODE_ENV) {
+        case 'test':
+            mongo_url = process.env.MONGO_URL_TEST;
+            break;
+        case 'production':
+            mongo_url = process.env.MONGO_URL_PROD;
+            break;
+        case 'development':
+            mongo_url = process.env.MONGO_URL_DEV;
+            break;
+    }
+    mongoose.connect(mongo_url, { useNewUrlParser: true });
 };
 
 

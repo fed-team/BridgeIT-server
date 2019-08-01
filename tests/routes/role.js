@@ -4,6 +4,8 @@ import chaiHttp  from 'chai-http'
 import { Role } from "../../models";
 import server from "../../index";
 
+process.env.NODE_ENV = 'test';
+
 let should = chai.should();
 chai.use(chaiHttp);
 
