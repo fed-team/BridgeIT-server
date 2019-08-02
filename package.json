@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "babel-core": "7.0.0-bridge.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -8,6 +9,7 @@
     "express-promise-router": "^3.0.3",
     "helmet": "^3.15.0",
     "joi": "^14.3.0",
+    "link-module-alias": "^1.2.0",
     "mongoose": "^5.4.0",
     "morgan": "^1.9.1",
     "node-cron": "^2.0.3",
@@ -17,9 +19,11 @@
   "scripts": {
     "start": "babel-node .",
     "dev": "now dev",
+    "postinstall": "link-module-alias",
     "test": "nyc mocha tests/**/*.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
@@ -28,5 +32,12 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^6.2.0"
+  },
+  "_moduleAliases": {
+    "@controllers": "./controllers",
+    "@models": "./models",
+    "@routes": "./routes",
+    "@helpers": "./helpers",
+    "@": "./"
   }
 }
