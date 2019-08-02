@@ -1,4 +1,4 @@
-import { Role } from '../models'
+import { Role } from '@models'
 
 const index = async (req, res) => {
     const roles = await Role.find({});

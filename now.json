@@ -8,7 +8,15 @@
     { "src": "/(.*)", "dest": "index.js" }
   ],
   "env": {
-    "MONGO_URL": "@mongo_url"
+    "MONGO_URL": "@mongo_url",
+    "MONGO_URL_PROD": "@mongo_url_prod",
+    "MONGO_URL_TEST": "@mongo_url_test",
+    "MONGO_URL_DEV": "@mongo_url_dev",
+    "MAIL_SERVICE": "@mail_service",
+    "MAIL_EMAIL": "@mail_email",
+    "MAIL_PASSWORD": "@mail_password",
+    "MAIL_HOST": "@mail_host",
+    "NOTIFICATION_TARGET_MAIL": "@notification_target_mail"
   }
 }
 
