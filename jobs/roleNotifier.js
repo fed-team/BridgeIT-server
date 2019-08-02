@@ -1,4 +1,4 @@
-import { Role } from "../models";
+import { Role } from "@models";
 import { roleNotifierMail } from "./templates";
 
 export default async (transporter, ADMIN_EMAILS) => {

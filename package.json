@@ -1,7 +1,6 @@
 {
   "private": true,
   "dependencies": {
-    "babel-core": "7.0.0-bridge.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -38,6 +37,8 @@
     "@models": "./models",
     "@routes": "./routes",
     "@helpers": "./helpers",
+    "@config": "./config.js",
+    "@jobs": "./jobs",
     "@": "./"
   }
 }

@@ -1,7 +1,7 @@
 import express from 'express'
 
-import config from '@/config'
-import { role, test } from '@/routes'
+import config from '@config'
+import { role, test } from '@routes'
 
 require('dotenv').config()
 

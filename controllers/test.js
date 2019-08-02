@@ -1,4 +1,4 @@
-import { Test } from '@/models'
+import { Test } from '@models'
 
 const index = async (req, res) => {
     res.status(200).json(process.env)

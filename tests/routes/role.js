@@ -1,8 +1,8 @@
 import chai, {expect} from 'chai';
 import chaiHttp  from 'chai-http'
 
-import { Role } from "../../models";
-import server from "../../index";
+import { Role } from "@models";
+import server from "@";
 
 let should = chai.should();
 chai.use(chaiHttp);
