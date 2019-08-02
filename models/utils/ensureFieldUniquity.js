@@ -8,10 +8,11 @@ export default fieldName => async function(next, done) {
     //grab the unique field value of the document that is about to be checked
     const uniqueField = this[fieldName];
 
-    await this.constructor.findOne({[fieldName]: uniqueField}, (err, test) => {
+    await this.constructor.findOne({[fieldName]: uniqueField}, (err, documentThatTookTheValue) => {
+
         if(err)
             done(err);
-        if(test)
+        if(documentThatTookTheValue)
             done("Name already taken");
         done();
     });

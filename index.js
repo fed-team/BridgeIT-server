@@ -9,12 +9,16 @@ const app = express()
 
 config.useMiddleware(app)
 config.mongo_connect()
+config.initNodeMailer();
+config.kickstartScheduler();
 
 app.use('/test', test);
 app.use('/role', role);
 
 const port = process.env.PORT || 1200
-app.listen(port, err => {
-    if(err) throw err
-    console.log(`> Ready on server http://localhost:${port}`)
-})
+const server = app.listen(port, function(err)  {
+    if(err) throw err;
+    console.log(`> Ready on server http://localhost:${port}`);
+
+});
+export default server;

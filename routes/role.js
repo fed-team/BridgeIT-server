@@ -15,7 +15,8 @@ router.route('/:desiredAction((((de)?)activate))/:id')
 router.route('/:id')
     .get(validateParam(schema.id, 'id'), Controller.get)
     .put([validateParam(schema.id, 'id'), validateBody(schema.role.put)], Controller.replace)
-    .patch([validateParam(schema.id, 'id'), validateBody(schema.role.patch)], Controller.update);
+    .patch([validateParam(schema.id, 'id'), validateBody(schema.role.patch)], Controller.update)
+    .delete(validateParam(schema.id, 'id'), Controller.remove);
 
 
 export default router;
