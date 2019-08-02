@@ -18,8 +18,8 @@
   "scripts": {
     "start": "babel-node .",
     "dev": "now dev",
-    "postinstall": "link-module-alias",
-    "test": "nyc mocha tests/**/*.js"
+    "test": "NODE_ENV=test nyc mocha tests/**/*.js",
+    "postinstall": "link-module-alias"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
