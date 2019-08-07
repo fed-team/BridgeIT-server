@@ -1,4 +1,4 @@
-import { Role } from '../models'
+import { Role } from '@models'
 
 const index = async (req, res) => {
     const roles = await Role.find({});
@@ -31,6 +31,12 @@ const update = async (req, res) => {
     res.status(200).json({ success: true });
 };
 
+const remove = async (req, res) => {
+    const { id } = req.value.params;
+    await Role.findByIdAndRemove(id);
+    res.status(202).json({ success: true });
+};
+
 const switchActivity = async (req, res) => {
     const { id } = req.value.params;
     const { desiredAction } = req.params;
@@ -40,4 +46,4 @@ const switchActivity = async (req, res) => {
 };
 
 
-export default { index, get, update, add, replace, switchActivity };
+export default { index, get, update, add, replace, remove, switchActivity };
