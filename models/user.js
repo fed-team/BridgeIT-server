@@ -19,13 +19,13 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    role: {
-        type: [role.schema],
-        required: true
-    },
+    role: [{
+        type: role.schema.Types.ObjectId,
+        ref: 'Name'
+    }],
     isActive: {
         type: Boolean,
-        default: true
+        default: false
     }
 });
 
