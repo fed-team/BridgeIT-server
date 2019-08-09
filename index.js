@@ -1,7 +1,7 @@
 import express from 'express'
 
 import config from '@config'
-import { role, test } from '@routes'
+import { role, test, user } from '@routes'
 
 require('dotenv').config()
 
@@ -14,6 +14,7 @@ config.kickstartScheduler();
 
 app.use('/test', test);
 app.use('/role', role);
+app.use('/user', user);
 
 const port = process.env.PORT || 1200
 const server = app.listen(port, function(err)  {
@@ -22,3 +23,4 @@ const server = app.listen(port, function(err)  {
 
 });
 export default server;
+

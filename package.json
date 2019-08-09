@@ -1,6 +1,7 @@
 {
   "private": true,
   "dependencies": {
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -18,8 +19,10 @@
   "scripts": {
     "start": "babel-node .",
     "dev": "now dev",
+
     "test": "NODE_ENV=test nyc mocha tests/**/*.js",
     "postinstall": "link-module-alias"
+
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -31,6 +34,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^6.2.0"
+
   },
   "_moduleAliases": {
     "@controllers": "./controllers",
@@ -40,5 +44,6 @@
     "@config": "./config.js",
     "@jobs": "./jobs",
     "@": "./"
+
   }
 }

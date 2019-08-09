@@ -1,5 +1,10 @@
-import { Schema, model } from 'mongoose'
-import { ensureFieldUniquity } from "./utils";
+import {
+    Schema,
+    model
+} from 'mongoose'
+import {
+    ensureFieldUniquity
+} from "./utils";
 
 const RoleSchema = new Schema({
     name: { type: String, required: true, unique: true },

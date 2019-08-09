@@ -8,6 +8,7 @@
     { "src": "/(.*)", "dest": "index.js" }
   ],
   "env": {
+
     "MONGO_URL": "@mongo_url",
     "MONGO_URL_PROD": "@mongo_url_prod",
     "MONGO_URL_TEST": "@mongo_url_test",
