@@ -2,7 +2,6 @@ import { Schema, model } from "mongoose";
 import { ensureFieldUniquity } from "./utils";
 
 import bcrypt from "bcrypt";
-import role from "./role";
 
 const UserSchema = new Schema({
   login: {
@@ -14,7 +13,7 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
-  role: [{ type: mongoose.Schema.Types.ObjectId, ref: "Role" }],
+  role: [{ type: Schema.Types.ObjectId, ref: "Role" }],
   isActive: {
     type: Boolean,
     default: false
